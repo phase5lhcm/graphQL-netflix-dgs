@@ -1,0 +1,8 @@
+#build project to generate java classes from the schema
+# run build each time this file changes to generate classes
+type Query{
+    allHellos: [Hello]
+    oneHello: Hello
+    books(author:String): [Book]
+    booksByReleased(releasedInput: ReleaseHistoryInput!): [Book]
+}
