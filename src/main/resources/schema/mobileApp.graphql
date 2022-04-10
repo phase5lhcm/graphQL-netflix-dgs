@@ -1,0 +1,21 @@
+type MobileApp {
+    name: String!
+    version: String
+    platform: [String]
+    author: Author
+    #addId cannot be a required or non null type value
+    # when it is a non null type, it incorrectly returns a null value sometimes
+    appId: ID
+}
+
+#note that these filters are optional parameters for the user
+input MobileAppFilter{
+    name: String
+    version: String
+    platform: String
+    author: AuthorFilter
+}
+
+input AuthorFilter{
+    name: String
+}
